@@ -17,14 +17,13 @@ public class AfterThrowMethodInterceptor implements MethodInterceptor {
 
 
     @Override
-    public Object invoke(MethodInvocation methodInvocation) throws InvocationTargetException, IllegalAccessException {
-        Object res = null;
+    public Object invoke(MethodInvocation methodInvocation) throws Exception {
         try {
-            res = methodInvocation.proceed();
+            return methodInvocation.proceed();
         } catch (Exception e) {
             aspectMethod.setAccessible(true);
             aspectMethod.invoke(aspectInstance);
+            throw e;
         }
-        return res;
     }
 }

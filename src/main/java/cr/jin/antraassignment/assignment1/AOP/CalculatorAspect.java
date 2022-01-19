@@ -1,6 +1,7 @@
 package cr.jin.antraassignment.assignment1.AOP;
 
 import cr.jin.antraassignment.assignment1.AOP.annotations.*;
+import cr.jin.antraassignment.assignment1.AOP.interfaces.MethodInvocation;
 
 public class CalculatorAspect {
 
@@ -16,8 +17,11 @@ public class CalculatorAspect {
     }
 
     @Around
-    public void aroundLogic() {
-        System.out.println("This is around.");
+    public Object aroundLogic(MethodInvocation mi) throws Exception {
+        System.out.println("This is around before");
+        Object res = mi.proceed();
+        System.out.println("This is around after");
+        return res;
     }
 
     @AfterThrow

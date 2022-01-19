@@ -8,6 +8,4 @@
    2. @AfterThrow
    3. `optional`@Around (Before & After)
 
-**Due date: Thursday 9PM CDT**
-
-### Assignment 2
+**Due date: Thursday 8PM CDT**

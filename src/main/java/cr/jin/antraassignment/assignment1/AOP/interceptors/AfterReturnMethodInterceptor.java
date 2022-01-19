@@ -15,7 +15,6 @@ public class AfterReturnMethodInterceptor implements MethodInterceptor {
         this.aspectMethod = aspectMethod;
     }
 
-
     @Override
     public Object invoke(MethodInvocation methodInvocation) throws Exception {
         try {

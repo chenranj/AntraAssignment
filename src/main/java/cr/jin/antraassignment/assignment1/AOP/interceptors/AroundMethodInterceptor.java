@@ -18,9 +18,6 @@ public class AroundMethodInterceptor implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation methodInvocation) throws Exception {
         aspectMethod.setAccessible(true);
-        aspectMethod.invoke(aspectInstance);
-        Object res = methodInvocation.proceed();
-        aspectMethod.invoke(aspectInstance);
-        return res;
+        return aspectMethod.invoke(aspectInstance, methodInvocation);
     }
 }
